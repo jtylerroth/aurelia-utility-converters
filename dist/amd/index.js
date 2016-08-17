@@ -6,6 +6,6 @@ define(['exports'], function (exports) {
   });
   exports.configure = configure;
   function configure(config) {
-    config.globalResources('./hello-world');
+    config.globalResources(['./currency', './filter', './json', './limit', './md5', './number', './sort']);
   }
 });

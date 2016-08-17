@@ -1,3 +1,3 @@
 export function configure(config) {
-  config.globalResources('./hello-world');
+  config.globalResources(['./currency', './filter', './json', './limit', './md5', './number', './sort']);
 }

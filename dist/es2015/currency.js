@@ -1,4 +1,4 @@
-export class CurrencyValueConverter {
+export let CurrencyValueConverter = class CurrencyValueConverter {
   constructor() {
     this.defaultOptions = {
       minimumFractionDigits: 2,
@@ -6,7 +6,7 @@ export class CurrencyValueConverter {
       locale: 'en-US',
       currency: "USD",
       currencyDisplay: "symbol"
-    }
+    };
   }
 
   toView(value, options = {}) {
@@ -17,8 +17,7 @@ export class CurrencyValueConverter {
         style: "currency",
         currency: options.currency || this.defaultOptions.currency,
         currencyDisplay: options.currencyDisplay || this.defaultOptions.currencyDisplay
-      })
+      });
     }
   }
-}
-
+};

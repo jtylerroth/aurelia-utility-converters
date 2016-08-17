@@ -20,7 +20,9 @@ System.register([], function (_export, _context) {
         }
 
         JsonValueConverter.prototype.toView = function toView(value) {
-          return JSON.stringify(value, null, '\t');
+          if (value) {
+            return JSON.stringify(value, null, '\t');
+          }
         };
 
         return JsonValueConverter;

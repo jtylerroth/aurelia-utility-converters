@@ -20,7 +20,9 @@ System.register([], function (_export, _context) {
         }
 
         LimitValueConverter.prototype.toView = function toView(array, amount) {
-          return array.slice(0, amount);
+          if (array) {
+            return array.slice(0, amount);
+          }
         };
 
         return LimitValueConverter;

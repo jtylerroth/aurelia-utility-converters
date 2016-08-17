@@ -12,7 +12,9 @@ var JsonValueConverter = exports.JsonValueConverter = function () {
   }
 
   JsonValueConverter.prototype.toView = function toView(value) {
-    return JSON.stringify(value, null, '\t');
+    if (value) {
+      return JSON.stringify(value, null, '\t');
+    }
   };
 
   return JsonValueConverter;

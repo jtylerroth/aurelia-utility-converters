@@ -17,7 +17,9 @@ define(["exports"], function (exports) {
     }
 
     LimitValueConverter.prototype.toView = function toView(array, amount) {
-      return array.slice(0, amount);
+      if (array) {
+        return array.slice(0, amount);
+      }
     };
 
     return LimitValueConverter;

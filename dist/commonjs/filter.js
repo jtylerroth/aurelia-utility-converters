@@ -12,7 +12,7 @@ var FilterValueConverter = exports.FilterValueConverter = function () {
   }
 
   FilterValueConverter.prototype.toView = function toView(array, property, value) {
-    if (!array || !property) {
+    if (!array || !property || !value) {
       return array;
     }
     return array.filter(function (item) {
