@@ -11,7 +11,15 @@ Install from NPM
 or JSPM
 `jspm install aurelia-utility-converters`
 
-If using **aurelia-cli** add `aurelia-utility-converters` to your `aurelia.config` file.
+If using **aurelia-cli** add 
+```
+    {
+            "name": "aurelia-utility-converters",
+            "path": "../node_modules/aurelia-utility-converters/dist/amd",
+            "main": "index"
+    }
+```
+to your dependencies in the `aurelia.json` file.
 
 Import the plugin into your application
 
