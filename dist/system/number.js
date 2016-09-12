@@ -28,7 +28,7 @@ System.register([], function (_export, _context) {
         NumberValueConverter.prototype.toView = function toView(value) {
           var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
 
-          if (value) {
+          if (value || value == 0) {
             return Number(value).toLocaleString(options.locale || this.defaultOptions.locale, {
               maximumFractionDigits: options.maximumFractionDigits || this.defaultOptions.maximumFractionDigits,
               minimumFractionDigits: options.minimumFractionDigits || this.defaultOptions.minimumFractionDigits

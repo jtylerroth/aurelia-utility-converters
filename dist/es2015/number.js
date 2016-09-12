@@ -7,7 +7,7 @@ export let NumberValueConverter = class NumberValueConverter {
     };
   }
   toView(value, options = {}) {
-    if (value) {
+    if (value || value == 0) {
       return Number(value).toLocaleString(options.locale || this.defaultOptions.locale, {
         maximumFractionDigits: options.maximumFractionDigits || this.defaultOptions.maximumFractionDigits,
         minimumFractionDigits: options.minimumFractionDigits || this.defaultOptions.minimumFractionDigits
