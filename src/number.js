@@ -7,6 +7,9 @@ export class NumberValueConverter {
     }
   }
   toView(value, options = {}) {
+    if(value == 0){
+      return '0';
+    }
     if (value) {
       return Number(value).toLocaleString(options.locale || this.defaultOptions.locale, {
         maximumFractionDigits: options.maximumFractionDigits || this.defaultOptions.maximumFractionDigits,

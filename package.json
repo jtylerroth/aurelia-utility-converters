@@ -1,6 +1,6 @@
 {
   "name": "aurelia-utility-converters",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A set of value-converters for an Aurelia application.",
   "keywords": [
     "aurelia",
