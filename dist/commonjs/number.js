@@ -18,7 +18,7 @@ var NumberValueConverter = exports.NumberValueConverter = function () {
   }
 
   NumberValueConverter.prototype.toView = function toView(value) {
-    var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
     if (value || value == 0) {
       return Number(value).toLocaleString(options.locale || this.defaultOptions.locale, {

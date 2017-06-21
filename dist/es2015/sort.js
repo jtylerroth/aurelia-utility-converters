@@ -7,10 +7,24 @@ export let SortValueConverter = class SortValueConverter {
       return array;
     }
     array.sort((a, b) => {
-      if (a[property] < b[property]) {
+
+      let aProp;
+      let bProp;
+      if (typeof a[property] == "string") {
+        aProp = a[property].toUpperCase();
+      } else {
+        aProp = a[property];
+      }
+      if (typeof b[property] == "string") {
+        bProp = b[property].toUpperCase();
+      } else {
+        bProp = b[property];
+      }
+
+      if (aProp < bProp) {
         return sortAsc ? -1 : 1;
       }
-      if (a[property] > b[property]) {
+      if (aProp > bProp) {
         return sortAsc ? 1 : -1;
       }
       return 0;

@@ -28,7 +28,7 @@ System.register([], function (_export, _context) {
         }
 
         CurrencyValueConverter.prototype.toView = function toView(value) {
-          var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
           if (value) {
             return Number(value).toLocaleString(options.locale || this.defaultOptions.locale, {

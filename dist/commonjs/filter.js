@@ -16,7 +16,7 @@ var FilterValueConverter = exports.FilterValueConverter = function () {
       return array;
     }
     return array.filter(function (item) {
-      return item[property].toLowerCase().indexOf(value.toLowerCase()) > -1;
+      return item[property].toString().toLowerCase().indexOf(value.toString().toLowerCase()) > -1;
     });
   };
 

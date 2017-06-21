@@ -3,6 +3,6 @@ export let FilterValueConverter = class FilterValueConverter {
     if (!array || !property || !value) {
       return array;
     }
-    return array.filter(item => item[property].toLowerCase().indexOf(value.toLowerCase()) > -1);
+    return array.filter(item => item[property].toString().toLowerCase().indexOf(value.toString().toLowerCase()) > -1);
   }
 };

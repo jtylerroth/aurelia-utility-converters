@@ -12,7 +12,7 @@ var SortValueConverter = exports.SortValueConverter = function () {
   }
 
   SortValueConverter.prototype.toView = function toView(array, property) {
-    var sortAsc = arguments.length <= 2 || arguments[2] === undefined ? true : arguments[2];
+    var sortAsc = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
     if (!array) {
       return;
@@ -21,10 +21,24 @@ var SortValueConverter = exports.SortValueConverter = function () {
       return array;
     }
     array.sort(function (a, b) {
-      if (a[property] < b[property]) {
+
+      var aProp = void 0;
+      var bProp = void 0;
+      if (typeof a[property] == "string") {
+        aProp = a[property].toUpperCase();
+      } else {
+        aProp = a[property];
+      }
+      if (typeof b[property] == "string") {
+        bProp = b[property].toUpperCase();
+      } else {
+        bProp = b[property];
+      }
+
+      if (aProp < bProp) {
         return sortAsc ? -1 : 1;
       }
-      if (a[property] > b[property]) {
+      if (aProp > bProp) {
         return sortAsc ? 1 : -1;
       }
       return 0;
