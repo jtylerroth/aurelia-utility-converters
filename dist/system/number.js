@@ -1,45 +1,47 @@
-'use strict';
-
 System.register([], function (_export, _context) {
   "use strict";
-
-  var NumberValueConverter;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
 
   return {
     setters: [],
     execute: function () {
-      _export('NumberValueConverter', NumberValueConverter = function () {
-        function NumberValueConverter() {
-          _classCallCheck(this, NumberValueConverter);
+      define(['exports'], function (exports) {
+        'use strict';
 
-          this.defaultOptions = {
-            locale: 'en-US',
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0
-          };
+        Object.defineProperty(exports, "__esModule", {
+          value: true
+        });
+
+        function _classCallCheck(instance, Constructor) {
+          if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+          }
         }
 
-        NumberValueConverter.prototype.toView = function toView(value) {
-          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        var NumberValueConverter = exports.NumberValueConverter = function () {
+          function NumberValueConverter() {
+            _classCallCheck(this, NumberValueConverter);
 
-          if (value || value == 0) {
-            return Number(value).toLocaleString(options.locale || this.defaultOptions.locale, {
-              maximumFractionDigits: options.maximumFractionDigits || this.defaultOptions.maximumFractionDigits,
-              minimumFractionDigits: options.minimumFractionDigits || this.defaultOptions.minimumFractionDigits
-            });
+            this.defaultOptions = {
+              locale: 'en-US',
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0
+            };
           }
-        };
 
-        return NumberValueConverter;
-      }());
+          NumberValueConverter.prototype.toView = function toView(value) {
+            var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-      _export('NumberValueConverter', NumberValueConverter);
+            if (value || value == 0) {
+              return Number(value).toLocaleString(options.locale || this.defaultOptions.locale, {
+                maximumFractionDigits: options.maximumFractionDigits || this.defaultOptions.maximumFractionDigits,
+                minimumFractionDigits: options.minimumFractionDigits || this.defaultOptions.minimumFractionDigits
+              });
+            }
+          };
+
+          return NumberValueConverter;
+        }();
+      });
     }
   };
 });

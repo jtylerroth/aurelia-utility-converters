@@ -1,9 +1,11 @@
-'use strict';
+define(['exports'], function (exports) {
+  'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.configure = configure;
+  function configure(config) {
+    config.globalResources(['./currency', './filter', './json', './limit', './md5', './number', './sort']);
+  }
 });
-exports.configure = configure;
-function configure(config) {
-  config.globalResources(['./currency', './filter', './json', './limit', './md5', './number', './sort']);
-}

@@ -15,7 +15,8 @@ exports.base = function() {
     plugins: [
       'syntax-flow',
       'transform-decorators-legacy',
-      'transform-flow-strip-types'
+      'transform-flow-strip-types',
+      'transform-es2015-modules-amd'
     ]
   };
 };

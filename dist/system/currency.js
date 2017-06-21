@@ -1,50 +1,52 @@
-"use strict";
-
 System.register([], function (_export, _context) {
   "use strict";
-
-  var CurrencyValueConverter;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
 
   return {
     setters: [],
     execute: function () {
-      _export("CurrencyValueConverter", CurrencyValueConverter = function () {
-        function CurrencyValueConverter() {
-          _classCallCheck(this, CurrencyValueConverter);
+      define(["exports"], function (exports) {
+        "use strict";
 
-          this.defaultOptions = {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-            locale: 'en-US',
-            currency: "USD",
-            currencyDisplay: "symbol"
-          };
+        Object.defineProperty(exports, "__esModule", {
+          value: true
+        });
+
+        function _classCallCheck(instance, Constructor) {
+          if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+          }
         }
 
-        CurrencyValueConverter.prototype.toView = function toView(value) {
-          var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        var CurrencyValueConverter = exports.CurrencyValueConverter = function () {
+          function CurrencyValueConverter() {
+            _classCallCheck(this, CurrencyValueConverter);
 
-          if (value) {
-            return Number(value).toLocaleString(options.locale || this.defaultOptions.locale, {
-              maximumFractionDigits: options.maximumFractionDigits || this.defaultOptions.maximumFractionDigits,
-              minimumFractionDigits: options.minimumFractionDigits || this.defaultOptions.minimumFractionDigits,
-              style: "currency",
-              currency: options.currency || this.defaultOptions.currency,
-              currencyDisplay: options.currencyDisplay || this.defaultOptions.currencyDisplay
-            });
+            this.defaultOptions = {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+              locale: 'en-US',
+              currency: "USD",
+              currencyDisplay: "symbol"
+            };
           }
-        };
 
-        return CurrencyValueConverter;
-      }());
+          CurrencyValueConverter.prototype.toView = function toView(value) {
+            var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-      _export("CurrencyValueConverter", CurrencyValueConverter);
+            if (value) {
+              return Number(value).toLocaleString(options.locale || this.defaultOptions.locale, {
+                maximumFractionDigits: options.maximumFractionDigits || this.defaultOptions.maximumFractionDigits,
+                minimumFractionDigits: options.minimumFractionDigits || this.defaultOptions.minimumFractionDigits,
+                style: "currency",
+                currency: options.currency || this.defaultOptions.currency,
+                currencyDisplay: options.currencyDisplay || this.defaultOptions.currencyDisplay
+              });
+            }
+          };
+
+          return CurrencyValueConverter;
+        }();
+      });
     }
   };
 });
